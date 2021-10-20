@@ -51,6 +51,7 @@ namespace ClientServerSoftware
                     if(obj is Player)
                     {
                         ClientPlayer = (Player)obj;
+                        Carrier.Send(stream, ServerPlayer);
                     }
                     if (obj is Step)
                     {

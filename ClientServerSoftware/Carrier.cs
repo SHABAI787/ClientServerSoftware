@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace ClientServerSoftware
             }
 
             return obj;
+        }
+
+        public static void Send(NetworkStream networkStream, object obj)
+        {
+            var data = Serialize(obj);
+            networkStream.Write(data, 0, data.Length);
         }
 
         public static byte[] Serialize(object anySerializableObject)
