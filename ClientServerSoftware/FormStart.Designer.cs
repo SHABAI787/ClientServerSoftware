@@ -1,6 +1,6 @@
 ﻿namespace ClientServerSoftware
 {
-    partial class Form1
+    partial class FormStart
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -36,7 +36,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(192, 105);
+            this.button1.Location = new System.Drawing.Point(29, 96);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 35);
             this.button1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(175, 143);
+            this.button2.Location = new System.Drawing.Point(12, 134);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(234, 35);
             this.button2.TabIndex = 1;
@@ -56,22 +56,25 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(192, 181);
+            this.button3.Location = new System.Drawing.Point(29, 172);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 35);
             this.button3.TabIndex = 2;
             this.button3.Text = "Выход";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 343);
+            this.ClientSize = new System.Drawing.Size(256, 280);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "FormStart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Крестики нолики";
             this.ResumeLayout(false);
 
