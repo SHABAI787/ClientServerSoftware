@@ -79,6 +79,7 @@
             this.создатьИгруToolStripMenuItem.Name = "создатьИгруToolStripMenuItem";
             this.создатьИгруToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.создатьИгруToolStripMenuItem.Text = "Создать игру";
+            this.создатьИгруToolStripMenuItem.Click += new System.EventHandler(this.создатьИгруToolStripMenuItem_Click);
             // 
             // подключитьсяКИгреToolStripMenuItem
             // 
@@ -190,6 +191,7 @@
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Крестики нолики";
+            this.Load += new System.EventHandler(this.FormGame_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
