@@ -21,10 +21,7 @@ namespace ClientServerSoftware
 
         private void создатьИгруToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(GameServer.State == GameServerState.Stop)
-                GameServer.StartGame(2025, "", this);
-            else
-                GameServer.StopGame();
+            new FormNewGame(this).ShowDialog();
         }
 
         private void FormGame_Load(object sender, EventArgs e)
@@ -54,6 +51,11 @@ namespace ClientServerSoftware
                 pictureBox.Image = Resources.Cross;
             else
                 pictureBox.Image = Resources.Zero;
+        }
+
+        private void FormGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GameServer.StopGame();
         }
 
         //public static void EndGame(GameOver step)

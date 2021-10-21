@@ -73,7 +73,7 @@ namespace ClientServerSoftware
                 if (list != null)
                 {
                     list.Stop();
-                    listenThread.Abort();
+                    listenThread?.Abort();
                 }
                 State = GameServerState.Stop;
             }

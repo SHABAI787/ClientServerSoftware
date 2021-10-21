@@ -191,6 +191,7 @@
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Крестики нолики";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGame_FormClosed);
             this.Load += new System.EventHandler(this.FormGame_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
