@@ -29,8 +29,15 @@ namespace ClientServerSoftware
 
         public static void Send(NetworkStream networkStream, object obj)
         {
-            var data = Serialize(obj);
+            try
+            {
+                var data = Serialize(obj);
             networkStream.Write(data, 0, data.Length);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         public static byte[] Serialize(object anySerializableObject)

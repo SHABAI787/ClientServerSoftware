@@ -11,9 +11,9 @@ namespace ClientServerSoftware
     public static class GameClient
     {
         private static FormGame FormGame = null;
-        private static TcpClient client = null;
-        private static NetworkStream stream = null;
         private static Thread listenThread = null;
+        public static NetworkStream Stream = null;
+        public static TcpClient Client = null;
         public static Player ClientPlayer = null;
         public static Player ServerPlayer = null;
         public static StateClient State;
@@ -22,12 +22,16 @@ namespace ClientServerSoftware
             FormGame = formGame;
             ClientPlayer = new Player();
             ClientPlayer.Name = namePlayer;
+            ClientPlayer.Type = TypePlayer.Zero;
+            formGame.PlayerThis = ClientPlayer;
+            formGame.IsClient = true;
+            formGame.Text = "Крестики нолики (Клиент)";
             try
             {
-                client = new TcpClient(iPAddress, port);
-                stream = client.GetStream();
+                Client = new TcpClient(iPAddress, port);
+                Stream = Client.GetStream();
                 listenThread = new Thread(Process);
-                Carrier.Send(stream, ClientPlayer);
+                Carrier.Send(Stream, ClientPlayer);
                 listenThread.Start();
                 State = StateClient.Connect;
             }
@@ -39,8 +43,8 @@ namespace ClientServerSoftware
 
         public static void Disconnect()
         {
-            stream.Close();
-            client.Close();
+            Stream.Close();
+            Client.Close();
             State = StateClient.Disconnect;
         }
 
@@ -52,7 +56,7 @@ namespace ClientServerSoftware
             {
                 while (true)
                 {
-                    int sizeReadBytes = stream.Read(data, 0, data.Length);
+                    int sizeReadBytes = Stream.Read(data, 0, data.Length);
                     if (sizeReadBytes == 0)
                         break;
 
@@ -61,6 +65,9 @@ namespace ClientServerSoftware
                     if (obj is Player)
                     {
                         ServerPlayer = (Player)obj;
+                        FormGame.Player2 = ServerPlayer;
+                        FormGame.SetInfo($"С вами играет {ServerPlayer.Name}");
+                        FormGame.NewGame();
                     }
 
                     if (obj is Step)
@@ -73,6 +80,7 @@ namespace ClientServerSoftware
             }
             catch (Exception ex)
             {
+                FormGame.SetInfo($"Соединение не установлено");
             }
         }
 

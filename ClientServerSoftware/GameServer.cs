@@ -15,6 +15,7 @@ namespace ClientServerSoftware
         public static Player ClientPlayer = null;  
         public static Player ServerPlayer = null;  
         public static FormGame FormGame = null;  
+        public static NetworkStream Stream = null;
         public static void StartGame(int port, string namePlayer, FormGame formGame)
         {
             try
@@ -27,7 +28,11 @@ namespace ClientServerSoftware
                 State = GameServerState.Start;
                 ServerPlayer = new Player();
                 ServerPlayer.Name = namePlayer;
+                ServerPlayer.Type = TypePlayer.Cross;
+                formGame.PlayerThis = ServerPlayer;
+                formGame.Text = "Крестики нолики (Сервер)";
                 FormGame = formGame;
+                FormGame.SetInfo("Ждём второго игрока ...");
             }
             catch (Exception ex)
             {
@@ -38,20 +43,21 @@ namespace ClientServerSoftware
         public static void Process()
         {
             TcpClient client = null;
-            NetworkStream stream = null;
-
+            client = list.AcceptTcpClient();
             while (true)
             {
                 try
                 {
-                    client = list.AcceptTcpClient();
-                    stream = client.GetStream();
-                    stream.Read(bytes, 0, bytes.Length);
+                    Stream = client.GetStream();
+                    Stream.Read(bytes, 0, bytes.Length);
                     var obj = Carrier.Deserialize(bytes);
                     if(obj is Player)
                     {
                         ClientPlayer = (Player)obj;
-                        Carrier.Send(stream, ServerPlayer);
+                        FormGame.Player2 = ClientPlayer;
+                        FormGame.SetInfo($"С вами играет {ClientPlayer.Name}");
+                        Carrier.Send(Stream, ServerPlayer);
+                        FormGame.NewGame();
                     }
                     if (obj is Step)
                     {
@@ -61,6 +67,8 @@ namespace ClientServerSoftware
                 }
                 catch (Exception ex)
                 {
+                    FormGame.SetInfo($"Соединение не установлено");
+                    break;
                 }
                 bytes = new byte[1024];
             }

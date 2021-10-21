@@ -120,6 +120,45 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pBox15.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAsAAAHNCAIAAABHCBZsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGpJREFUaEPtyqENACAQADG2/F3YjO3QNWjEJZVdZ89bQw011FBDDTXUUEMNNdRQ
+        Qw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEN/jD0X
+        gYx+WV1FJDwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pBox14.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAsAAAHNCAIAAABHCBZsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGpJREFUaEPtyqENACAQADG2/F3YjO3QNWjEJZVdZ89bQw011FBDDTXUUEMNNdRQ
+        Qw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEN/jD0X
+        gYx+WV1FJDwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pBox13.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAsAAAHNCAIAAABHCBZsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGpJREFUaEPtyqENACAQADG2/F3YjO3QNWjEJZVdZ89bQw011FBDDTXUUEMNNdRQ
+        Qw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEN/jD0X
+        gYx+WV1FJDwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pBox12.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAc0AAAAQCAIAAAD78LMPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAFFJREFUeF7t1EENADAIALG5xAvOcDcV92tSDX23A0DHswAtzwK0PAvQ8ixAy7MA
+        Lc8CtDwL0PIsQMuzAC3PArQ8C9DyLEDLswAtzwK0PAtQ2vktsVq1hqzZJQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pBox11.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAc0AAAAQCAIAAAD78LMPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAFFJREFUeF7t1EENADAIALG5xAvOcDcV92tSDX23A0DHswAtzwK0PAvQ8ixAy7MA
+        Lc8CtDwL0PIsQMuzAC3PArQ8C9DyLEDLswAtzwK0PAtQ2vktsVq1hqzZJQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>59</value>
   </metadata>

@@ -20,14 +20,14 @@ namespace ClientServerSoftware
 
     public enum StepIndex
     {
-        I1,
-        I2,
-        I3,
-        I4,
-        I5,
-        I6,
-        I7,
-        I8,
-        I9,
+        I1 = 1,
+        I2 = 2,
+        I3 = 3,
+        I4 = 4,
+        I5 = 5,
+        I6 = 6,
+        I7 = 7,
+        I8 = 8,
+        I9 = 9,
     }
 }
