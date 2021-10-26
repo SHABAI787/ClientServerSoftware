@@ -1,12 +1,8 @@
 ﻿using ClientServerSoftware.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientServerSoftware
@@ -33,7 +29,7 @@ namespace ClientServerSoftware
 
         private void FormGame_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         public void NextStep(Step step, bool thisPlayerSetStep = true)
@@ -57,8 +53,8 @@ namespace ClientServerSoftware
         private void CheckStep(TypePlayer typePlayer)
         {
             List<Step> stepsCross = steps.Where(s => s.Player.Type == typePlayer).ToList();
-            if (stepsCross.Any(s => s.Index == StepIndex.I1) 
-                && stepsCross.Any(s => s.Index == StepIndex.I2) 
+            if (stepsCross.Any(s => s.Index == StepIndex.I1)
+                && stepsCross.Any(s => s.Index == StepIndex.I2)
                 && stepsCross.Any(s => s.Index == StepIndex.I3)) ShowLine(Lines.L1, typePlayer);
             if (stepsCross.Any(s => s.Index == StepIndex.I4)
                 && stepsCross.Any(s => s.Index == StepIndex.I5)
@@ -105,7 +101,7 @@ namespace ClientServerSoftware
 
         private void ShowGameOver(TypePlayer typePlayer)
         {
-            if(typePlayer == PlayerThis.Type)
+            if (typePlayer == PlayerThis.Type)
                 MessageBox.Show(this, "Победа!", "Победа", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show(this, $"Победил {Player2.Name}", "Поражение", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -148,7 +144,7 @@ namespace ClientServerSoftware
 
         private void ShowLine(Lines line, TypePlayer typePlayer)
         {
-            this.Invoke((MethodInvoker)delegate 
+            this.Invoke((MethodInvoker)delegate
             {
                 switch (line)
                 {
@@ -190,7 +186,7 @@ namespace ClientServerSoftware
         private void pBox_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
-            if(pictureBox.Image == null && ThisPlayerSetStep)
+            if (pictureBox.Image == null && ThisPlayerSetStep)
             {
                 Step step = new Step();
                 step.Player = this.PlayerThis;
